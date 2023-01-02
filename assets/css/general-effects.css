@@ -1,0 +1,68 @@
+
+/*Effects here*/
+.btn:hover{
+    background-color: #527a7a;
+}
+
+#toggleBtn:hover{
+    border: 2.1px solid #527a7a;
+}
+
+#toggleBtn:hover::before{
+    background-color: #527a7a;
+}
+
+#themeCheck:checked + label{
+    background-color: #527a7a;
+}
+
+#themeCheck:checked + label::before{
+    background-color: aliceblue;
+    margin-left: 22.5px;
+}
+
+body#dark{
+    transition: .5s ease-out;
+    background-color: #141f1f;
+}
+
+.typewiriter{
+    color: #cfe6e684;
+
+}
+
+.color{
+    color: yellow;
+    animation: mudarCor 2s infinite;
+}
+
+@keyframes mudarCor {
+    from{
+        color: darkcyan;
+    }
+
+    to{
+        color: red;
+    }
+}
+
+.size{
+    color: #cfe6e684;
+    display: block;
+    animation-name: tamanho;
+    animation-duration: 2.50s;
+    animation-iteration-count: infinite;
+
+}
+
+@keyframes tamanho{
+    from{
+        transform: scaleX(1);
+    }
+
+    to{
+        transform: scale(1.3);
+    }
+
+}
+
