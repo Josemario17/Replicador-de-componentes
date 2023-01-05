@@ -66,3 +66,35 @@ body#dark{
 
 }
 
+.btnTypes button:hover{
+    transform: scale(1.1);
+}
+
+.btnSucess:hover{
+    background-color: #6cca8eb5;
+}
+
+.btnPrimary:hover{
+     background-color: #6ca6e3ba;
+}
+
+.btnWarning:hover{
+    background-color: #f7cc7ba4;
+}
+
+.btnError:hover{
+    background-color: #f59685ac;
+}
+
+#btn-active{
+    border: 1.5px solid;
+    background-color: unset;
+}
+
+.btns button:hover{
+    transform: scale(1.1);
+}
+
+#takeHover:hover .in-btns button{
+    display: flex;
+}

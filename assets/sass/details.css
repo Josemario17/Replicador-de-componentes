@@ -7,4 +7,32 @@ code {
   overflow: scroll;
 }
 
+#alert-sucess {
+  width: 100%;
+  background-color: #6cca8e;
+  padding: 1rem;
+  color: aliceblue;
+}
+
+#alert-Primary {
+  width: 100%;
+  background-color: #6ca5e3;
+  padding: 1rem;
+  color: aliceblue;
+}
+
+#alert-warning {
+  width: 100%;
+  background-color: #f7cb7b;
+  padding: 1rem;
+  color: aliceblue;
+}
+
+#alert-error {
+  width: 100%;
+  background-color: #f59685;
+  padding: 1rem;
+  color: aliceblue;
+}
+
 /*Todos editaveis mais complexos ficam aqui, desde efeitos, responsividade e pre-load*//*# sourceMappingURL=details.css.map */
