@@ -1,3 +1,8 @@
+$invert: invert(.9);
+$contrast: contrast(100);
+$blur: blur(3px);
+$greyscale: grayscale(50);
+
 code{
     width: 100%;
     height: 100%;
@@ -33,6 +38,41 @@ code{
     background-color: #f59685;
     padding: 1rem;
     color: aliceblue;
+}
+
+#sm{
+    width: 60%;
+}
+
+#md{
+    width: 80%;
+}
+
+#xl{
+    width: 100%;
+}
+
+#contrast{
+    filter: $contrast;
+}
+
+#invert{
+    filter: $invert;
+    border: 1px solid #6ca5e3;
+}
+
+#grayScale{
+    filter: $greyscale;
+}
+
+#blur{
+   filter: $blur;
+}
+
+#contrast, #invert, #grayScale, #blur{
+    &:hover{
+        transform: rotate(10deg);
+    }
 }
 
 /*Todos editaveis mais complexos ficam aqui, desde efeitos, responsividade e pre-load*/

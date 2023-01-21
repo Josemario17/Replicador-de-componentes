@@ -35,4 +35,37 @@ code {
   color: aliceblue;
 }
 
+#sm {
+  width: 60%;
+}
+
+#md {
+  width: 80%;
+}
+
+#xl {
+  width: 100%;
+}
+
+#contrast {
+  filter: contrast(100);
+}
+
+#invert {
+  filter: invert(0.9);
+  border: 1px solid #6ca5e3;
+}
+
+#grayScale {
+  filter: grayscale(50);
+}
+
+#blur {
+  filter: blur(3px);
+}
+
+#contrast:hover, #invert:hover, #grayScale:hover, #blur:hover {
+  transform: rotate(10deg);
+}
+
 /*Todos editaveis mais complexos ficam aqui, desde efeitos, responsividade e pre-load*//*# sourceMappingURL=details.css.map */

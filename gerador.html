@@ -273,14 +273,150 @@
         </div>
     </div>
 
+    <!-- component Card -->
     <div class="popUp" id="popUP">
-        <div class="close-tab" id="diferentCLose">
+        <div class="close-tab">
             <button id="closebtn">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
               </button>
         </div>
+
+        <div class="mini-container">
+            <aside class="Card-Edit" id="Card-Edit">
+                    <div class="card" id="card-sub">
+                        <img src="assets/img/background.png" alt="" class="img-card">
+                        <h2>Titulo do Card</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, veniam accusantium.</p>
+                        <button class="btn-edit" id="initialBtnExample">Click</button>
+                    </div>
+            </aside>
+    
+            <aside class="editers card-ahk" id="editers-0">
+                <div class="tcSelct">
+                    <select name="s-tc" id="Sselct-card">
+                        <option value="0">Editar Card</option>
+                        <option value="1">Editar image do Card</option>
+                        <option value="2">Editar btn do card</option>
+                    </select>
+                </div>
+                <h3>Componente Card</h3>
+                 <div class="mini-edits">
+                    <label for="size-sm" id="labelCard">sm</label>
+                    <input type="checkbox" name="CardType" id="sizeCard">
+                    <label for="size-md" id="labelCard">md</label>
+                    <input type="checkbox" name="CardType" id="sizeCard">
+                    <label for="size-xl" id="labelCard">xl</label>
+                    <input type="checkbox" name="CardType" id="sizeCard">
+                 </div>
+    
+                 <div class="mini-edits me-2">
+                    <input type="color" name="color" id="CardColor">
+                    <input type="text" name="t-add" id="text-addCar" placeholder="Titulo do Card">
+                 </div>
+    
+                 <div class="mini-edits">
+                    <div id="extra-content">
+                        <div class="rRadius"> Borda &nbsp; <input type="range" name="r-radius" id="radius-rangeCard" min="0" max="100" step="10" value="0"></div>
+                    </div>
+                 </div>
+            </aside>
+            
+            <aside class="editers card-ahk" id="editers-1">
+                <div class="tcSelct">
+                    <select name="s-tc" id="Sselct-card">
+                        <option value="0">Editar Card</option>
+                        <option value="1">Editar image do Card</option>
+                        <option value="2">Editar btn do card</option>
+                    </select>
+                </div>
+                <h3>Componente Card-Image</h3>
+                 <div class="mini-edits">
+                    <label for="size-sm" id="labelCardImage">sm</label>
+                    <input type="checkbox" name="CardType" id="sizeCard">
+                    <label for="size-md" id="labelCardImage">md</label>
+                    <input type="checkbox" name="CardType" id="sizeCard">
+                    <label for="size-xl" id="labelCardImage">xl</label>
+                    <input type="checkbox" name="CardType" id="sizeCard">
+                 </div>
+                 <div class="mini-edits me-2">
+                    <button class="btnImg" id="contrast"><img src="assets/img/background.png" alt=""></button>
+                    <button class="btnImg" id="invert"><img src="assets/img/background.png" alt=""></button>
+                    <button class="btnImg" id="grayScale"><img src="assets/img/background.png" alt=""></button>
+                    <button class="btnImg" id="blur"><img src="assets/img/background.png" alt=""></button>
+                 </div>
+    
+                 <div class="mini-edits">
+                    <div id="extra-content">
+                        <div class="rRadius"> Borda &nbsp; <input type="range" name="r-radius" id="radius-rangeImage" min="0" max="100" step="10" value="0"></div>
+                    </div>
+                 </div>
+            
+                </aside>
+    
+
+            <aside class="editers card-ahk" id="editers-1">
+                <div class="tcSelct">
+                    <select name="s-tc" id="Sselct-card">
+                        <option value="0">Editar Card</option>
+                        <option value="1">Editar image do Card</option>
+                        <option value="2">Editar btn do card</option>
+                    </select>
+                    </div>
+                    <h3>Componente Botão</h3>
+                    <div class="mini-edits" id="btn-area">
+                    <span>Tamanho</span>
+                    <label for="size-sm" id="label">sm</label>
+                    <input type="checkbox" name="btnType" id="btnSize-sm">
+                    <label for="size-md" id="label">md</label>
+                    <input type="checkbox" name="btnType" id="btnSize-md">
+                    <label for="size-xl" id="label">xl</label>
+                    <input type="checkbox" name="btnType" id="btnSize-xl">
+                    </div>
+    
+                    <div class="mini-edits">
+                    <span>bg-colors</span>
+                    <input type="color" name="color" id="color" class="btnExampleBgColor">
+                    </div>
+    
+                    <div class="mini-edits">
+                    <div id="extra-content">
+                        <input type="text" name="t-add" class="newInptText" id="text-add" placeholder="Texto do Botão">
+                        <div class="rRadius"> Borda <input type="range" name="r-r" id="radius-rangeBtnExample" min="0" max="20" step="5" value="0"></div>
+                    </div>
+                    </div>
+                </aside>
+                
+
+            
+            <aside class="final-code">
+                <code>
+                    <span class="tag">.card {</span>
+                    <span class="styleType">
+                        width: <span class="styleValue" id="cardSizeType">auto;</span>
+                    </span>
+    
+                    <span class="styleType">
+                        background-color: <span class="styleValue" id="inptBgColorCard">auto;</span>
+                    </span>
+    
+                    
+                    <span class="styleType">
+                        border-radius: <span class="styleValue" id="inptRadiusCard">auto;</span>
+                    </span>
+                    <span class="tag">}</span>
+                   </code>
+                   <div class="btns">        
+                       
+                       <button class="btnCopy" id="copyCardCode">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
+                      </svg>
+                      </button>
+                   </div>
+            </aside>
+           </div>
     </div>
 
     <div class="popUp" id="popUP">
@@ -328,12 +464,12 @@
                             </div>
                         </code>
                         <div class="btns in-btns">        
-                                <button class="btnReset" id="reset">
+                                <button class="btnReset" id="ToReset">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
                                 </svg>
                                 </button>
-                                <button class="btnCopy" id="copy">
+                                <button class="btnCopy" id="ToCopy">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
                                 </svg>

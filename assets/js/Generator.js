@@ -12,6 +12,11 @@ let radiusRangeInpt = document.getElementById("radius-range")
 let label = document.querySelectorAll("#label")
 let alertList = document.querySelectorAll("#alert-edit")
 let c = document.getElementById("alert-edit")
+let colorCard = document.getElementById("CardColor")
+let tAdd = document.getElementById("text-addCar")
+let radB = document.getElementById("radius-rangeCard")
+let sub = document.querySelectorAll("#card-sub")[0]
+
 
 
 //Area para functions open/Hide
@@ -33,17 +38,14 @@ for(let i = 0; i<btnList.length; i++)
         }
         
     })
-
-    if(i==0){}
-}
-
-//functions para fechamento
-for(let i=0; i<btnClose.length; i++)
-{
     btnClose[i].addEventListener("click", function(){
         popList[i].style.display = "none"
     })
 }
+
+//functions para fechamento
+
+    
 
 /* PopUp do Botão */
 class operation{
@@ -150,9 +152,199 @@ function changeClassId(item){
        var css_obj = getComputedStyle(alertList[0]);
        let array
        for (var i = 0; i < css_obj.length; i++) {
-           css_data +=
-               css_obj[i] + ':' + 
-               css_obj.getPropertyValue(css_obj[i]) + ';<br>';
+           css_data += css_obj[i] + ':' + css_obj.getPropertyValue(css_obj[i]) + ';<br>';
        }
        document.getElementById('inSert').innerHTML = css_data;
+
+        document.getElementById("ToReset").addEventListener("click", function(){
+            alertList[0].id = "alert-edit"
+            document.getElementById('inSert').innerHTML = ""
+             for(let i=0; i<btnListAlert.length; i++)
+            {
+                btnListAlert[i].id = ""
+            }
+            
+        })
+     
+}
+
+let cc = document.getElementById("ToCopy")
+        cc.addEventListener("click", function(){
+        alert('Texto copiado para área de transferência! Ctrl+V em algum local para colar')
+        navigator.clipboard.writeText(document.getElementById('inSert').innerHTML)
+        })
+
+
+/* Funcionalidades do POPUP - Card */
+class editionsCard{
+    
+    constructor(bgColor, textTitle, borderRa){
+        this.bgColor = bgColor
+        this.textTitle = textTitle
+        this.borderRa = borderRa
+    }
+
+    aplySize(Id, size){
+        sub.id = "" + Id
+        document.getElementById("cardSizeType").textContent = size
+    }
+
+    aplyColor(){
+            document.getElementById("Card-Edit").children[0].style.backgroundColor = this.bgColor
+            document.getElementById("inptBgColorCard").textContent = this.bgColor
+    }
+
+    aplyBorder(){
+        document.getElementById("Card-Edit").children[0].style.borderRadius = this.borderRa + "px"
+        document.getElementById("inptRadiusCard").textContent = this.borderRa + "px"
+        
+    }
+
+    aplyText()
+    {
+        document.getElementById("Card-Edit").children[0].children[1].textContent = this.textTitle
+    }
+}
+
+
+colorCard.onchange = function(){
+    let init = new editionsCard(colorCard.value, tAdd.value , radB.value)
+    init.aplyColor()
+}
+
+radB.onmouseout = function(){
+    let init = new editionsCard(colorCard.value, tAdd.value , radB.value)
+    init.aplyBorder()
+}
+
+tAdd.onchange = function(){
+    let init = new editionsCard(colorCard.value, tAdd.value , radB.value)
+    init.aplyText()
+}
+
+
+let items = document.querySelectorAll("#labelCard")
+let listIds = new Array()
+let id
+id = ["sm" ,"60%"]
+listIds[0] =  id
+id = ["md" ,"80%"]
+listIds[1] = id
+id = ["xl" ,"100%"]
+listIds[2] = id
+
+
+for(let i=0; i<items.length; i++)
+{
+    items[i].onclick = function(){
+            let init = new editionsCard(colorCard.value, tAdd.value , radB.value)
+            init.aplySize(listIds[i][0], listIds[i][1])
+    }
+}
+
+//Image Area - Card
+let listWidth = new Array()
+listWidth[0] = "30%"
+listWidth[1] = "45%"
+listWidth[2] = "52%"
+
+let filters = new Array()
+filters[0] = "contrast"
+filters[1] = "invert"
+filters[2] = "grayScale"
+filters[3] = "blur"
+
+
+let element  = document.querySelector(".img-card")
+let labelImageCard = document.querySelectorAll("#labelCardImage")
+let btnImg = document.querySelectorAll(".btnImg")
+for(let i = 0; i<labelImageCard.length; i++)
+{
+    labelImageCard[i].onclick = function(){
+        element.style.width = listWidth[i]
+    }
+}
+
+for(let i=0; i<btnImg.length; i++)
+{
+    
+    btnImg[i].onclick = function(){
+        element.id = filters[i]
+    }
+}
+
+document.getElementById("radius-rangeImage").onchange= function(){
+    element.style.borderRadius = document.getElementById("radius-rangeImage").value + "px"
+}
+
+function buttonCard()
+{
+    let btnSizeList, AddTextInpt, colorInpt, border;
+    btnSizeList = document.querySelectorAll("#btn-area label")
+    AddTextInpt = document.querySelectorAll(".newInptText")[0]
+    colorInpt = document.querySelectorAll(".btnExampleBgColor")[0]
+    border = document.querySelectorAll("#radius-rangeBtnExample")[0]
+
+    let Edit = document.querySelectorAll("#initialBtnExample")[0]
+    for(let i = 0; i<btnSizeList.length; i++)
+    {
+        btnSizeList[i].onclick = function(){
+            Edit.style.width = listWidth[i];
+        }
+    }
+
+    colorInpt.onchange = function(){
+        Edit.style.backgroundColor = colorInpt.value
+    }
+
+    AddTextInpt.onchange = function(){
+        Edit.textContent = AddTextInpt.value
+    }
+
+    border.onchange = function(){
+        Edit.style.borderRadius = border.value + "px"
+    }
+}
+
+buttonCard()
+
+let selector = document.querySelectorAll("#Sselct-card")
+let type = document.querySelectorAll(".card-ahk")
+for(let item = 0; item<selector.length; item++)
+{
+    selector[item].onchange = function(){
+        
+        for(let i = 0; i<selector.length; i++)
+        {
+            type[i].id = "editers-1"
+        }
+
+        let values = selector[item].selectedIndex
+        switch (values) {
+            case 0:
+                    type[0].id = "editers-0"
+                break;
+
+                case 1:
+                    type[1].id = "editers-0"
+                break;
+
+                case 2:
+                    type[2].id = "editers-0"
+                break;
+        
+            default:
+                break;
+        }
+    }
+}
+
+let copyMoreOne = document.getElementById("copyCardCode").onclick = function(){
+    navigator.clipboard.writeText(".btn{ "
+    + 
+    "width: " + document.getElementById("cardSizeType").textContent +
+    "; background-color: " + document.getElementById("inptBgColorCard").textContent +
+    "; border-radius: " + document.getElementById("inptRadiusCard").textContent +
+    "; }")
+    alert('Texto copiado para área de transferência! Ctrl+V em algum local para colar')
 }
