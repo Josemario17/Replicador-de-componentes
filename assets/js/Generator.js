@@ -1,5 +1,5 @@
 /* Recebendo todas ids e inicializa-lós */
-
+alert("Olá, neste site o elementos não são totalmente Responsivos, para melhor experiencia use um dispositivo com um tamanho de media de 700px ou mais, caso não não terá uma boa intereção e design")
 //varaivéis
 let btnList = document.querySelectorAll(".group-fix")
 let popList = document.querySelectorAll("#popUP")
