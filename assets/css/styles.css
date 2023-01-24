@@ -486,6 +486,17 @@ svg{
     padding: 1% 2%;
 }
 
+.AreaResult{
+    background-color: rgba(240, 248, 255, 0.532);
+    border-radius: 15px;
+    padding: 1% 2%;
+    width: 50%;
+    height: 60%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
 div.result:nth-of-type(1){
     width: 100%;
     display: grid;
@@ -840,4 +851,68 @@ input#text-addCar{
 
 #editers-1{
     display: none;
+}
+
+.ident{
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.ident svg, #svg-fill{
+    width: 470px;
+    height: 170px;
+    color: rgb(218, 53, 53);
+}
+
+.progress{
+    width: 100%;
+    height: 35px;
+    background-color:darkgray;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.bar{
+    width: 30%;
+    height: 100%;
+    background-color: #293d3d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnType{
+    border: 1px solid;
+    width: 100%;
+    height: 35px;
+    margin: 0 auto;
+    background-color: #293d3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: medium;
+    color: #cfe6e6;
+    gap: 5px;
+    border-radius: 12px;
+}
+
+.hidden-show{
+    display: none;
+}
+
+#codeInBlock{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#codeInBlock button{
+    width: 50%;
+    height: 35px;
+    border-radius: 12px;
+    border: 1px solid #527a7a;
+    margin: 0 auto;
 }

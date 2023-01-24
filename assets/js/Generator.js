@@ -348,3 +348,95 @@ let copyMoreOne = document.getElementById("copyCardCode").onclick = function(){
     "; }")
     alert('Texto copiado para área de transferência! Ctrl+V em algum local para colar')
 }
+
+let tList = document.querySelectorAll("#labelTypeProgress")
+let theDad = document.getElementById("theContent")
+for(let i=0; i<tList.length; i++)
+    {
+        tList[i].onclick = function()
+        {
+            for(let j=0; j<theDad.children.length; j++)
+            {
+                theDad.children[j].style.display = "none"
+            }
+            theDad.children[i].style.display = "block"
+        }
+
+    }
+
+let nVar = document.querySelectorAll(".colorProgress")[0]
+let element1 = document.querySelectorAll(".bar")[0]
+let element2 = document.querySelectorAll(".pie-wrapper.progress-30 .pie .half-circle")[0]
+nVar.onchange = function()
+{
+    element1.style.backgroundColor = nVar.value 
+    element2.style.borderColor = nVar.value
+}
+
+let test = document.getElementById("testBtn")
+test.onclick = function(){
+   barLoad()
+    laod2()
+
+}
+
+function barLoad(){
+    let id = setInterval(frame, 1000)
+    let size = 30
+    function frame()
+    {
+        if (size >= 100) {
+            size = 30    
+            clearInterval(id);
+        }
+
+        else
+        {
+            size = size + 10
+            element1.style.width = size + "%"
+            element1.textContent = size + "%"
+        }
+    }
+}
+
+function laod2()
+{
+    let id = setInterval(frame2, 1000)
+    let size = 30
+    function frame2()
+    {
+        if (size >= 100) {
+            size = 30    
+            clearInterval(id);
+        }
+
+        else{    
+           
+            if(size<50)
+            {
+                
+                let element = document.querySelectorAll(".left-side")[0]
+                size = size + 28
+                let con = document.querySelectorAll(".label")[0]
+                con.textContent = size + "%"
+            }
+
+            else if(size<80)
+            {
+                let element = document.querySelectorAll(".pie-wrapper .pie")[0]
+                element.style.clip = "rect(auto, auto, auto, auto)";
+                size = size + 30
+                let con = document.querySelectorAll(".label")[0]
+                con.textContent = size + "%"
+            }
+
+            else if(size<100){
+                let element = document.querySelectorAll(".pie-wrapper .pie .half-circle")[0]
+                element.style.clip = "rect(auto, auto, auto, auto)";
+                size = size + 30
+                let con = document.querySelectorAll(".label")[0]
+                con.textContent = "100%"
+            }
+        }
+    }   
+}
