@@ -105,7 +105,7 @@ body#dark{
     color: #141f1f;
 }
 
-#codeInBlock button:hover{
+#codeInBlock a:hover{
     border: 1px solid;
     background-color: #527a7a;
     color: #141f1f;
